@@ -1,0 +1,44 @@
+html {
+    font-family: arial;
+}
+
+body {
+    background: lightgray;
+    box-sizing: border-box;
+}
+
+#cesiumContainer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.overlay {
+    width: 20%;
+    height: auto;
+    overflow-wrap: normal;
+    color: #fff;
+    background: #e74c3c;
+    position: absolute;
+    top: 10;
+    left: 10;
+    margin: 0;
+    z-index: 1000;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.searchbox {
+    background: #e74c3c;
+}
+
+h2 {
+    color: black;
+}
+
+.beer {
+    text-align: center;
+}

@@ -1,0 +1,61 @@
+<html>
+
+<body>
+
+    <head>
+        <title>Cesium API Test</title>
+        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="stylesheet" href="http://cesiumjs.org/releases/1.11/Build/Cesium/Widgets/widgets.css">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <meta name=keywords value="beer, search">
+        <meta name=description value="Beer Finder - finding your beer favorites on the map!">
+    </head>
+
+
+    <div class="overlay">
+        <h2>Welcome to Brew Finder!<i class="fa fa-beer" aria-hidden="true"></i></h2>
+        <p>Looking for that special beer, but don't know where to look?</p>
+        <p>Choose your beer style below, and watch the viewer mark the locations on the map.
+        </p>
+        <div class="beer">
+            <h3>Find my Beer:</h3>
+            <form class="searchbox" id="beer_search">
+                <p>Beer Styles</p>
+                <select name="beerstyles" form="beer_search">
+                    <option value="ipa">IPA</option>
+                    <option value="amber">Amber</option>
+                    <option value="wheat">Wheat</option>
+                    <option value="dark">Dark</option>
+                </select>
+                <p>Alcohol %</p>
+                <select name="Alcohol % form=" beer_search>
+                    <option value="low_alc">Low alcohol</option>
+                    <option value="mod_alc">Moderate alcohol</option>
+                    <option value="high_alc">High alcohol</option>
+                    <option value="boom">Hammertime!</option>
+                </select>
+
+                <p>Bitterness (IBU's):</p>
+                <select name="bitterness" form="beer_search">
+                    <option value="1">Least Bitter (Pilsner)</option>
+                    <option value="2">Somewhat Bitter (Ale, stout or porter)</option>
+                    <option value="3">More Bitter (IPA)</option>
+                    <option value="4">Very Bitter (Double Hopped)</option>
+                </select>
+                <p>
+                    <input type="submit" value="Find My Beer">
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div id="cesiumContainer"></div>
+
+
+    <script src="http://cesiumjs.org/releases/1.11/Build/Cesium/Cesium.js "></script>
+    <script type="text/javascript " src="apps/app.js "></script>
+</body>
+
+
+
+</html>

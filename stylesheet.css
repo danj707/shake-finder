@@ -7,6 +7,10 @@ body {
     box-sizing: border-box;
 }
 
+.note {
+    font-size: 10px;
+}
+
 #cesiumContainer {
     width: 100%;
     margin: 0;
@@ -39,6 +43,6 @@ h2 {
     color: black;
 }
 
-.beer {
+.shake {
     text-align: center;
 }

@@ -6,43 +6,13 @@ var viewer = new Cesium.Viewer('cesiumContainer', {
     baseLayerPicker: false
 });
 
-//camera flies to...
-//viewer.camera.flyTo({
-//    destination: Cesium.Cartesian3.fromDegrees(-75.1641667, 39.9522222, 6000.0),
-//    orientation: {
-//        heading: Cesium.Math.toRadians(35.0),
-//        pitch: Cesium.Math.toRadians(-35.0),
-//        roll: 0.0
-//    },
-//    duration: 4.0, // in seconds
-//    complete: function () {
-//        // called when the flight finishes
-//    }
-//});
-
-//adds a pin to the below lat/long
-//var counter = 0;
-//var pinBuilder = new Cesium.PinBuilder();
-//var entity = viewer.entities.add({
-//    position: Cesium.Cartesian3.fromDegrees(-75.10, 39.57),
-//    label: {
-//        text: 'pin' + counter,
-//        verticalOrigin: Cesium.VerticalOrigin.TOP
-//    },
-//    billboard: {
-//        image: pinBuilder.fromColor(Cesium.Color.SALMON, 48).toDataURL(),
-//        verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
-//    }
-//
-//});
-
 var getEQdata = function (quake) {
 
     var request = {
         format: 'geojson',
-        starttime: '2016-05-01',
-        endtime: '2016-08-04',
-        minmagnitude: 7
+        starttime: quake.date_timepicker_start,
+        endtime: quake.date_timepicker_end,
+        minmagnitude: quake.magnitude
     };
 
     $.ajax({
@@ -50,23 +20,59 @@ var getEQdata = function (quake) {
             data: request,
             type: "GET",
         })
-        .done(function (result) { //this waits for the ajax to return with a succesful promise object
-            //            var searchResults = showSearchResults(request.tagged, result.items.length);
-            //
-            //            $('.search-results').html(searchResults);
-            //            //$.each is a higher order function. It takes an array and a function as an argument.
-            //            //The function is executed once for each item in the array.
-            //            $.each(result.items, function (i, item) {
-            //                var question = showQuestion(item);
-            //                $('.results').append(question);
-            //            });
-            console.log(result);
+        .done(function (result) {
+            if (result.features.length == 0) {
+                alert("There were no matches for your search. Try widening your search dates or lowering the magnitude.");
+            } else {
+                console.log("Success: " + result.features.length + " matches ");
+                for (var i = 0; i < result.features.length; i++) {
+                    var lat = result.features[i].geometry.coordinates[0];
+                    var long = result.features[i].geometry.coordinates[1];
+                    var mag = result.features[i].properties.mag;
+                    var name = result.features[i].properties.place;
+                    var height;
+
+                    if (mag > 7) {
+                        height = 750000;
+                    } else if (mag > 6) {
+                        height = 500000;
+                    } else if (mag > 5) {
+                        height = 300000;
+                    } else if (mag > 4) {
+                        height = 200000;
+                    } else if (mag > 3) {
+                        height = 100000;
+                    } else if (mag > 2) {
+                        height = 50000;
+                    } else if (mag > 1) {
+                        height = 25000;
+                    }
+
+                    //creates a polygon, in this case, a rectangle, on position = 'fromDegrees'
+                    var redBox = viewer.entities.add({
+                        name: "Loc: " + name + "Magnitude: " + mag,
+                        position: Cesium.Cartesian3.fromDegrees(lat, long),
+                        box: {
+                            dimensions: new Cesium.Cartesian3(200000.0, 150000.0, height),
+                            //length, width and height
+                            material: Cesium.Color.RED.withAlpha(0.5),
+                            //what fill color and transparency to use
+                            outline: true,
+                            //outline yes or no
+                            outlineColor: Cesium.Color.BLACK
+                                //border color to use
+                        }
+                    });
+                    //console.log("Loc: " + result.features[i].properties.place + "Magnitude: " + result.features[i].properties.mag);
+                }
+            }
         })
-        //        .fail(function (jqXHR, error) { //this waits for the ajax to return with an error promise object
-        //            var errorElem = showError(error);
-        //            $('.search-results').append(errorElem);
-        //        });
+
+    .fail(function (jqXHR, error) { //this waits for the ajax to return with an error promise object
+        alert(error);
+    });
 };
+
 
 //function to create the quakeForm object
 function quakeForm() {
@@ -120,7 +126,5 @@ $(document).ready(function () {
 
         var quake = quakeForm.collectFormData();
         getEQdata(quake);
-        //console.log(quake);
     });
-
 });

@@ -46,7 +46,7 @@ var getEQdata = function (quake) {
     };
 
     $.ajax({
-            url: "http://earthquake.usgs.gov/fdsnws/event/1/query",
+            url: "https://crossorigin.me/http://earthquake.usgs.gov/fdsnws/event/1/query",
             data: request,
             type: "GET",
         })

@@ -1,5 +1,5 @@
 html {
-    font-family: arial;
+    font-family: Arial;
 }
 
 body {
@@ -7,17 +7,16 @@ body {
     box-sizing: border-box;
 }
 
-.note {
-    font-size: 10px;
+h2 {
+    color: black;
 }
 
-#cesiumContainer {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: inline-block;
-    border-radius: 5px;
+p {
+    color: black;
+}
+
+.note {
+    font-size: 10px;
 }
 
 .overlay {
@@ -40,10 +39,15 @@ body {
     background: #e74c3c;
 }
 
-h2 {
-    color: black;
-}
-
 .shake {
     text-align: center;
+}
+
+#cesiumContainer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 5px;
 }

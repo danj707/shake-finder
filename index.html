@@ -2,8 +2,10 @@
 
 <body>
 
+    <!--links to Cesium CDN, Font Awesome-->
+
     <head>
-        <title>Cesium / USGS Earthquake Visualization</title>
+        <title>Cesium / USGS Earthquake Visualization - AJAX API</title>
         <link rel="stylesheet" href="stylesheet.css">
         <link rel="stylesheet" href="https://cesiumjs.org/releases/1.11/Build/Cesium/Widgets/widgets.css">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -12,17 +14,18 @@
     </head>
     <div class="overlay">
         <h2>Welcome to the Shake Finder!<i class="fa fa-globe" aria-hidden="true"></i></h2>
-        <p>Choose a timeframe, select a magnitude, and see where in the world it's shakin!
+        <p>Choose a date range, select a magnitude, and see where in the world it's shakin!
         </p>
         <div class="shake">
+            <!--searchbox form-->
             <form class="searchbox" id="shake_search">
-                <p>Date/time start:</p>
-                <input id="date_timepicker_start" type="text">
-                <p>Date/time end:</p>
-                <input id="date_timepicker_end" type="text">
-                <p class="note">Note: greater than 30 days may generate LARGE amounts of data</p>
+                <p>Start date:</p>
+                <input class="date" id="date_timepicker_start" type="text">
+                <p>End date:</p>
+                <input class="date" id="date_timepicker_end" type="text">
+                <p class="note">Note: Searches > than 30 days may generate LARGE amounts of data.</p>
                 <p>Magnitude:</p>
-                <select id="magnitude" name="magnitude" form="shake_search">
+                <select class="date" id="magnitude" name="magnitude" form="shake_search">
                     <option value="1">1 or More</option>
                     <option value="2">Magnitude 2 +</option>
                     <option value="3">Magnitude 3 +</option>
@@ -43,7 +46,6 @@
     </div>
 
     <div id="cesiumContainer"></div>
-    <div id="toolbar"></div>
 </body>
 
 <script src="https://cesiumjs.org/releases/1.11/Build/Cesium/Cesium.js "></script>

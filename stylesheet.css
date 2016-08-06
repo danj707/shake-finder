@@ -19,6 +19,10 @@ p {
     font-size: 10px;
 }
 
+.info {
+    font-size: 12px;
+}
+
 .overlay {
     width: 15%;
     height: auto;

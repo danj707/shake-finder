@@ -14,7 +14,7 @@
     </head>
     <div class="overlay">
         <h2>Welcome to the Shake Finder!<i class="fa fa-globe" aria-hidden="true"></i></h2>
-        <p>Choose a date range, select a magnitude, and see where in the world it's shakin!
+        <p>Choose a date range, select a magnitude, and see where in the world it's shakin! Click a data point to learn more about the quake, including date/time, location and magnitude.
         </p>
         <div class="shake">
             <!--searchbox form-->
@@ -23,7 +23,6 @@
                 <input class="date" id="date_timepicker_start" type="text">
                 <p>End date:</p>
                 <input class="date" id="date_timepicker_end" type="text">
-                <p class="note">Note: Searches > than 30 days may generate LARGE amounts of data.</p>
                 <p>Magnitude:</p>
                 <select class="date" id="magnitude" name="magnitude" form="shake_search">
                     <option value="1">1 or More</option>
@@ -42,6 +41,8 @@
                     <input type="button" id="reset" value="Reset Search">
                 </p>
             </form>
+            <hr>
+            <p class="note">Data and visualization by Cesium/USGS.</p>
         </div>
     </div>
 

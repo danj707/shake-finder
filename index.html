@@ -3,28 +3,24 @@
 <body>
 
     <head>
-        <title>Cesium API Test</title>
+        <title>Cesium / USGS Earthquake Visualization</title>
         <link rel="stylesheet" href="stylesheet.css">
         <link rel="stylesheet" href="https://cesiumjs.org/releases/1.11/Build/Cesium/Widgets/widgets.css">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
         <meta name=keywords value="usgs,earthquakes,worldmap,search">
         <meta name=description value="Shake Finder">
     </head>
-
-
     <div class="overlay">
         <h2>Welcome to the Shake Finder!<i class="fa fa-globe" aria-hidden="true"></i></h2>
-
         <p>Choose a timeframe, select a magnitude, and see where in the world it's shakin!
         </p>
         <div class="shake">
-
             <form class="searchbox" id="shake_search">
                 <p>Date/time start:</p>
                 <input id="date_timepicker_start" type="text">
                 <p>Date/time end:</p>
                 <input id="date_timepicker_end" type="text">
-                <p class="note">note: greater than 30 days may generate LARGE amounts of data</p>
+                <p class="note">Note: greater than 30 days may generate LARGE amounts of data</p>
                 <p>Magnitude:</p>
                 <select id="magnitude" name="magnitude" form="shake_search">
                     <option value="1">1 or More</option>
@@ -35,25 +31,25 @@
                     <option value="6">Magnitude 6 +</option>
                     <option value="7">7 or More</option>
                 </select>
+
                 <p>
                     <input type="submit" value="Get Shakin'">
+                </p>
+                <p>
+                    <input type="button" id="reset" value="Reset Search">
                 </p>
             </form>
         </div>
     </div>
 
     <div id="cesiumContainer"></div>
+    <div id="toolbar"></div>
 </body>
 
 <script src="https://cesiumjs.org/releases/1.11/Build/Cesium/Cesium.js "></script>
-
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
-
 <script type="text/javascript" src="apps/app.js"></script>
-
-
-
 
 </html>

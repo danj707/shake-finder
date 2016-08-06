@@ -18,7 +18,7 @@
 ##### Screenshots
 
 
-##### Thanks to
+##### Thanks to:
 * Special thanks to http://xdsoft.net/jqplugins/datetimepicker for their Jquery date picker code
 * Thanks to Cesium for making such an easy to use API!
 * Thanks to https://crossorigin.me/ for helping to solve the https/http error problem from using gh-pages

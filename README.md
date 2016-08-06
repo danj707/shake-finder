@@ -16,7 +16,7 @@
 * View accompanying sidebar data when clicked, includes descriptive name location, magnitude and UTC date/time
 
 ##### Screenshots
-
+![Shake Finder](screenshot.png "Shake Finder")
 
 ##### Thanks to:
 * Special thanks to http://xdsoft.net/jqplugins/datetimepicker for their Jquery date picker code

@@ -6,17 +6,20 @@
 ##### Technologies and learning points from this project:
 * AJAX calls from JS
 * Working with https/http endpoints
-* Displaying and formatting various datatyps, including long dates, lat/long, magnitude
+* Displaying and formatting various datatypes, including long dates, lat/long, magnitude
 * Working with Cesium API, objects and visualization
 
 ##### Instructions for use
 * Choose a start and end date range
 * Choose a magnitude
 * Watch the data points appear on the map, properly plotted for lat/long
-* View accompanying sidebar data when clicked, includes descriptive name location, magnitude and UTC date/time
+* View accompanying sidebar data when clicked, includes descriptive name, location, magnitude and UTC date/time
 
 ##### Screenshots
 ![Shake Finder](screenshot.png "Shake Finder")
+
+[Try Shake Finder!](https://github.com/danj707/shake-finder "Shake Finder")
+
 
 ##### Thanks to:
 * Special thanks to http://xdsoft.net/jqplugins/datetimepicker for their Jquery date picker code

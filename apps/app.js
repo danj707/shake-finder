@@ -85,7 +85,7 @@ var getEQdata = function (quake) {
         })
 
     .fail(function (jqXHR, error) {
-        alert(error);
+        alert("An AJAX api query has failed. Please reload the search and try again, or narrow the search criteria.");
     });
 };
 

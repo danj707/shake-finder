@@ -1,4 +1,6 @@
-//Bing key so Cesium doesn't throw an error everytime it loads
+'use strict';
+
+//Bing key so Cesium doesn't gen an error everytime it loads
 Cesium.BingMapsApi.defaultKey = 'ApcaGOvmoUuBrD2eHpVvRbOnrnJ8Fp33DrW8o6QLsJNZIpVHWGz9voYcM-BkEHYT';
 
 //new Cesium object, displays planet, generic zoom/display level
@@ -9,7 +11,7 @@ var viewer = new Cesium.Viewer('cesiumContainer', {
     baseLayerPicker: false
 });
 
-//build Ajax call, pull in start/end dates from form, gives an alert if no matches were found
+//build AJAX call, pull in start/end dates from form, gives an alert if no matches were found
 var getEQdata = function (quake) {
     var request = {
         format: 'geojson',
@@ -18,7 +20,7 @@ var getEQdata = function (quake) {
         minmagnitude: quake.magnitude
     };
     $.ajax({
-            url: "https://crossorigin.me/http://earthquake.usgs.gov/fdsnws/event/1/query",
+            url: "https://crossorigin.me/http://earthquake.usgs.gov/fdsnws/event/1/query", //crossorigin redir for gh-pages
             data: request,
             type: "GET",
         })
@@ -83,10 +85,9 @@ var getEQdata = function (quake) {
                 }
             }
         })
-
-    .fail(function (jqXHR, error) {
-        alert("An AJAX api query has failed. Please reload the search and try again, or narrow the search criteria.");
-    });
+        .fail(function (jqXHR, error) {
+            alert("An AJAX api query has failed. Please reload the search and try again, or narrow the search criteria.");
+        });
 };
 
 

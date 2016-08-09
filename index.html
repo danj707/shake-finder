@@ -1,17 +1,17 @@
-<html>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!--links to Cesium CDN, Font Awesome-->
+    <title>Cesium / USGS Earthquake Visualization - AJAX API</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://cesiumjs.org/releases/1.11/Build/Cesium/Widgets/widgets.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <meta name=keywords value="usgs,earthquakes,worldmap,search">
+    <meta name=description value="Shake Finder">
+</head>
 
 <body>
-
-    <!--links to Cesium CDN, Font Awesome-->
-
-    <head>
-        <title>Cesium / USGS Earthquake Visualization - AJAX API</title>
-        <link rel="stylesheet" href="stylesheet.css">
-        <link rel="stylesheet" href="https://cesiumjs.org/releases/1.11/Build/Cesium/Widgets/widgets.css">
-        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-        <meta name=keywords value="usgs,earthquakes,worldmap,search">
-        <meta name=description value="Shake Finder">
-    </head>
     <div class="overlay">
         <h2>Welcome to the Shake Finder!<i class="fa fa-globe" aria-hidden="true"></i></h2>
         <p>Choose a date range, select a magnitude, and see where in the world it's shakin! Click a data point to learn more about the quake, including date/time, location and magnitude.
@@ -26,7 +26,7 @@
                 <input class="date" id="date_timepicker_end" type="text">
                 <p>Magnitude:</p>
                 <select class="date" id="magnitude" name="magnitude" form="shake_search">
-                    <option value="1">1 or More</option>
+                    <option value="1">1 or less</option>
                     <option value="2">Magnitude 2 +</option>
                     <option value="3">Magnitude 3 +</option>
                     <option value="4">Magnitude 4 +</option>

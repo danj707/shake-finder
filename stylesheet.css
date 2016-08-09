@@ -24,7 +24,7 @@ p {
 }
 
 .overlay {
-    width: 15%;
+    width: 10%;
     height: auto;
     overflow-wrap: normal;
     color: #fff;
@@ -37,6 +37,11 @@ p {
     z-index: 1000;
     border-radius: 5px;
     padding: 10px;
+}
+
+#date_timepicker_start,
+#date_timepicker_end {
+    width: 100%;
 }
 
 .searchbox {
